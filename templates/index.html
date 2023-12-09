@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+ 
+
+{% block content %}
+
+    <button style="background-color: blue;  padding: 10px; border-radius: 20px;"> <a href="create" style="color: white;">Add Blog</a> </button>
+    <h1>Tech365 Blog</h1>
+
+    
+    {% for i in posts  %}
+        <h1>{{ i.title }}</h1>
+        <p>{{ i.date }}</p>
+        <p>{{ i.content }}</p>
+        <a href="update/{{i.id}}" style="background-color: green;  color: white; padding: 5px;">Update</a>
+       <a href="delete/{{i.id}}" style="background-color: red;  color: white; padding: 5px;">Delete</a>
+        
+    {% endfor %}
+        
+{% endblock content %}
+    
